@@ -5,6 +5,7 @@ import com.lms.lms.enums.Title;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -21,6 +22,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -39,6 +41,8 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Badge badge;
+
+    private String createdBy;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
