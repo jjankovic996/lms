@@ -8,7 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CreateStudentRequest {
+public class CreateUserRequestDto {
 
     @JsonProperty("title")
     private String title;
@@ -27,4 +27,5 @@ public class CreateStudentRequest {
 
     @JsonProperty("age")
     private int age;
+
 }

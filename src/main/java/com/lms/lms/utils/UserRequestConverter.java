@@ -2,13 +2,13 @@ package com.lms.lms.utils;
 
 import com.lms.lms.enums.Title;
 import com.lms.lms.model.User;
-import com.lms.lms.model.dto.CreateStudentRequest;
+import com.lms.lms.model.dto.CreateUserRequestDto;
 
-public class StudentConverter implements Converter<User, CreateStudentRequest> {
+public class UserRequestConverter implements Converter<User, CreateUserRequestDto> {
 
     @Override
-    public CreateStudentRequest entityToType(User entity) {
-        CreateStudentRequest type = new CreateStudentRequest();
+    public CreateUserRequestDto entityToType(User entity) {
+        CreateUserRequestDto type = new CreateUserRequestDto();
         type.setTitle(entity.getTitle().name());
         type.setFirstName(entity.getFirstName());
         type.setLastName(entity.getLastName());
@@ -20,12 +20,13 @@ public class StudentConverter implements Converter<User, CreateStudentRequest> {
     }
 
     @Override
-    public User typeToEntity(CreateStudentRequest type) {
+    public User typeToEntity(CreateUserRequestDto type) {
         User entity = new User();
         entity.setTitle(Title.valueOf(type.getTitle()));
         entity.setFirstName(type.getFirstName());
         entity.setLastName(type.getLastName());
         entity.setEmail(type.getEmail());
+        entity.setPassword(type.getPassword());
         entity.setAge(type.getAge());
 
         return entity;
