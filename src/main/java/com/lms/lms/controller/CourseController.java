@@ -45,6 +45,6 @@ public class CourseController {
 
     @GetMapping(value = "test")
     public void testJenkins(){
-        //test5
+        //test6
     }
 }
