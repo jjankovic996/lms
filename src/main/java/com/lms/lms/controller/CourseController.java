@@ -42,4 +42,9 @@ public class CourseController {
 
         return new ResponseEntity<>(courses, HttpStatus.CREATED);
     }
+
+    @GetMapping(value = "test")
+    public void testJenkins(){
+
+    }
 }
